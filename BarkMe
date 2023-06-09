@@ -1,6 +1,1 @@
-javascript:(function() {
-  var subject = encodeURIComponent(document.title);
-  var body = encodeURIComponent(document.title + '\n\n' + location.href);
-  var mailtoLink = 'mailto:iswangli@outlook.com?subject=' + subject + '&body=' + body;
-  window.location.href = mailtoLink;
-})();
+javascript:(async function() {  try {    const clipboardData = await navigator.clipboard.readText();    const clipboardContent = clipboardData.trim();    if (clipboardContent !== '') {      const url = 'https://api.day.app/yourkey/' + encodeURIComponent(clipboardContent);      await fetch(url);    } }catch (error) {console.log('ERROR：', error);}})();
