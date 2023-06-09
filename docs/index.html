@@ -3,16 +3,16 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>MailmeLink</title>
+  <title>BarkMe</title>
 
 </head>
 <body>
 
   可以将该链接拖动到收藏夹栏保存为书签：
- <a href="javascript:(function() {  var subject = encodeURIComponent(document.title);  var body = encodeURIComponent(document.title + '\n\n' + location.href);  var mailtoLink = 'mailto:iswangli@outlook.com?subject=%27 + subject + %27&body=%27 + body;  window.location.href = mailtoLink;})();">MailmeLink</a>
+ <a href="javascript:(async function() {  try {    const clipboardData = await navigator.clipboard.readText();    const clipboardContent = clipboardData.trim();    if (clipboardContent !== '') {      const url = %27https://api.day.app/yourkey/%27 + encodeURIComponent(clipboardContent);      await fetch(url);    } }catch (error) {console.log(%27ERROR%27, error);}})();">BarkMe</a>
   <br> </br> 
 Drag the link to the bookmarks bar to save it as a bookmark：
- <a href="javascript:(function() {  var subject = encodeURIComponent(document.title);  var body = encodeURIComponent(document.title + '\n\n' + location.href);  var mailtoLink = 'mailto:iswangli@outlook.com?subject=%27 + subject + %27&body=%27 + body;  window.location.href = mailtoLink;})();">MailmeLink</a>
+ <a href="javascript:(async function() {  try {    const clipboardData = await navigator.clipboard.readText();    const clipboardContent = clipboardData.trim();    if (clipboardContent !== '') {      const url = %27https://api.day.app/yourkey/%27 + encodeURIComponent(clipboardContent);      await fetch(url);    } }catch (error) {console.log(%27ERROR%27, error);}})();">BarkMe</a>
 
 </body>
 </html>
